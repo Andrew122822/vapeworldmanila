@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vape World - Premium Vape Products</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+        .age-modal {
+            display: flex;
+        }
+        .hidden {
+            display: none;
+        }
+        #location-map {
+            height: 400px;
+            background-color: #f5f5f5;
+        }
+    </style>
+</head>
+<body class="bg-white text-black font-sans">
+    <!-- Age Verification Modal -->
+    <div id="ageModal" class="age-modal fixed inset-0 bg-black bg-opacity-90 z-50 justify-center items-center p-4">
+        <div class="bg-white p-8 rounded-lg max-w-md text-center">
+            <h1 class="text-2xl font-bold mb-4">AGE VERIFICATION</h1>
+            <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d985ae8d-f2ec-4dd2-b0f3-b01eeb6f084e.png" alt="Warning sign with nicotine products crossed out" class="mx-auto mb-6" />
+            <p class="mb-6">THIS WEBSITE CONTAINS NICOTINE PRODUCTS AND IS INTENDED FOR ADULTS ONLY. YOU MUST BE 18 YEARS OR OLDER TO ENTER.</p>
+            <div class="flex justify-center gap-4">
+                <button id="confirmAge" class="bg-black text-white px-6 py-2 rounded hover:bg-gray-800 transition">I AM 18+</button>
+                <button id="declineAge" class="bg-white border border-black px-6 py-2 rounded hover:bg-gray-100 transition">I AM UNDER 18</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content (hidden until age verified) -->
+    <div id="mainContent" class="hidden">
+        
+
+        <!-- Navigation Buttons -->
+        <div class="bg-black text-white py-3">
+            <div class="container mx-auto flex justify-center space-x-4">
+
+                <h1 class="text-3xl font-bold">VAPE WORLD</h1>
+               
+
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="px-4 py-2 hover:bg-gray-800 rounded">Home</a>
+                <a href="#about-header" class="px-4 py-2 hover:bg-gray-800 rounded">About</a>
+                <a href="#products" class="px-4 py-2 hover:bg-gray-800 rounded">Products</a>
+                <a href="#locations" class="px-4 py-2 hover:bg-gray-800 rounded">Locations</a>
+            </div>
+        </div>
+
+        <!-- Hero Section -->
+        <header class="bg-gray-100 py-12 text-center">
+            <div class="container mx-auto px-4">
+                <h1 id="about-header" class="text-4xl font-bold mb-4">ABOUT VAPE WORLD</h1>
+                <div class="max-w-3xl mx-auto space-y-4 text-left">
+                    <p>Founded in 2025, Vape World has grown to become one of the most trusted names in the vaping industry. Our mission is to provide adult smokers with high-quality alternatives through premium vaping products.</p>
+                    <p>At Vape World, we carefully curate our product selection to ensure only the best devices, e-liquids, and accessories make it to our shelves. Our knowledgeable staff are passionate about helping both beginners and experienced vapers find products that suit their needs.</p>
+                    <p>We pride ourselves on maintaining a welcoming environment where adults can explore vaping products responsibly. All of our locations offer testing stations where customers can sample various e-liquid flavors before making a purchase.</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Products Section -->
+        <section id="products" class="py-16">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">OUR PRODUCTS</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Product 1 -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg overflow-hidden relative">
+                        <div class="h-auto overflow-hidden">
+                            <img src="https://i.postimg.cc/LsMMWTCq/ONE-BAR-POSTER.png" alt="Disposable Vape, a cutting-edge device deisgned for a premium vaping expereince" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-2">One Bar</h3>
+                            <p class="text-gray-600">Electronic Mechanics Aesthetic</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg overflow-hidden relative">
+                        <div class="h-auto overflow-hidden">
+                            <img src="https://i.postimg.cc/J7snXRFP/RELIX-POD-PRO-2-USE.png" alt="Collection of vape juice bottles in various colors and flavors" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-2">Relix Pod Pro 2</h3>
+                            <p class="text-gray-600">Harmonious blend of flavor and sensation</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg overflow-hidden relative">
+                        <div class="h-auto overflow-hidden">
+                            <img src="https://i.postimg.cc/rp9dfgGj/X-ULTRA-USE-2.png" alt="Smart Display, Smart Vaping" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-2">X-Vape Ultra</h3>
+                            <p class="text-gray-600">Detachable Cartridge Smart Display, Smart Vaping Breath Easy: Luxury Meets Advanced Airflow USB-C Charging</p>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="product-card bg-white border border-gray-200 rounded-lg overflow-hidden relative">
+                        <div class="h-auto overflow-hidden">
+                            <img src="https://i.postimg.cc/y8p6x5Tw/U-COOL-USE.jpg" alt="Stylish disposable vape in assorted colors" class="w-full h-full object-cover" />
+                        </div>
+                        <div class="p-4">
+                            <h3 class="font-bold text-lg mb-2">Lots of Flavors Detachable Cartridge Smart Display, Smart Vaping Breath Easy: Luxury Meets Advanced Airflow USB-C Charging</h3>
+                            <p class="text-gray-600">Convenient and portable</p>
+                        </div>
+                    </div>
+
+                                    </div>
+            </div>
+        </section>
+
+        <!-- Locations Section -->
+        <section id="locations" class="py-16 bg-gray-100">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">OUR LOCATIONS</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-lg mb-2">Alabang</h3>
+                        <p class="text-gray-600">Muntinlupa City</p>
+                        <p class="mt-2">10AM - 10PM Daily</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-lg mb-2">Las Piñas</h3>
+                        <p class="text-gray-600">Las Piñas City</p>
+                        <p class="mt-2">10AM - 10PM Daily</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-lg mb-2">Imus</h3>
+                        <p class="text-gray-600">Cavite</p>
+                        <p class="mt-2">10AM - 10PM Daily</p>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="font-bold text-lg mb-2">Bacoor</h3>
+                        <p class="text-gray-600">Cavite</p>
+                        <p class="mt-2">10AM - 10PM Daily</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 bg-black text-white">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-8 text-center">CONTACT US</h2>
+                <div class="max-w-md mx-auto text-center">
+                    <p class="mb-6">Have questions about our products or locations? Get in touch!</p>
+                    <p class="mb-2">
+                        <strong>Email:</strong> vapeworld@gmail.com
+                    </p>
+                    <p>
+                        <strong>Customer Support:</strong> Monday-Friday, 9AM-5PM
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-400 py-8">
+            <div class="container mx-auto px-4 text-center">
+                <p>© 2025 Vape World. All Rights Reserved.</p>
+                <p class="mt-2 text-sm">Products on this website contain nicotine which is an addictive substance. Must be 18+ to purchase.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Age verification
+        document.addEventListener('DOMContentLoaded', function() {
+            const ageModal = document.getElementById('ageModal');
+            const mainContent = document.getElementById('mainContent');
+            const confirmBtn = document.getElementById('confirmAge');
+            const declineBtn = document.getElementById('declineAge');
+
+            // Check if age was already verified
+            if(!localStorage.getItem('ageVerified')) {
+                ageModal.classList.add('flex');
+                ageModal.classList.remove('hidden');
+            } else {
+                mainContent.classList.remove('hidden');
+            }
+
+            confirmBtn.addEventListener('click', function() {
+                localStorage.setItem('ageVerified', 'true');
+                ageModal.classList.add('hidden');
+                mainContent.classList.remove('hidden');
+            });
+
+            declineBtn.addEventListener('click', function() {
+                window.location.href = 'https://www.google.com';
+            });
+
+            // Simple map implementation (would be replaced with Google Maps API in production)
+            const locations = [
+                { name: 'Alabang', city: 'Muntinlupa City' },
+                { name: 'Las Piñas', city: 'Las Piñas City' },
+                { name: 'Imus', city: 'Cavite' },
+                { name: 'Bacoor', city: 'Cavite' }
+            ];
+
+            const mapElement = document.getElementById('location-map');
+            if(mapElement) {
+                mapElement.innerHTML = `
+                    <div class="h-full w-full flex items-center justify-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/202050ad-af66-43b9-b7ac-2d7a5f983687.png" alt="Map showing Vape World locations in Metro Manila and Cavite area" />
+                    </div>
+                `;
+            }
+        });
+    </script>
+</body>
+</html>
+
